@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<!-- HEAD -->
+    <%- include('./partials/head') %> 
+
+<body>
+    <!-- HEADER + NAV -->
+    <%- include('./partials/header') %> 
+
+<!-- DETALLE -->
+<section class="container">
+    <div class="row">
+       <div class="col-12 titulo">
+            <h5>Detalle del producto: <%= nombre %> </h5>
+       </div>
+<div class="col-12 detalle">
+           <div class="contenido row">
+               <div class="col-12 col-lg-7 contenido1">
+                <img src="/images/<%= imagen %>" alt="">
+                <p><%= descripcion %></p>
+               </div>
+
+
+               <div class="container col-12 col-lg-5 contenido2">
+                   <h4><%= nombre %> </h4>
+                <% if (descuento > 0) { %>
+                    <p class="descuento">
+                        <span class="tachado"><%= precio %></span> / <span><%= descuento %>% OFF</span>
+                    </p>
+                    <h1>$<%= precioFinal %> </h1>
+                 <% } else { %>
+                    <h1>$<%= precio %> </h1>
+                    <% } %> 
+                   
+                <div class="promos"><i class="fas fa-credit-card" ></i> <span>Pagá en 12 cuotas sin interés </span></div>
+                <div class="promos"><i class="fas fa-store" ></i> <span>Retiro gratis en locales del vendedor</span></div>
+
+                <button type="button" class="btn btn-primary btn-lg btn-block">COMPRAR AHORA</button>
+               </div>
+           </div>
+</div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+    <%- include('./partials/footer') %> 
+
+
+</body>
+</html>
